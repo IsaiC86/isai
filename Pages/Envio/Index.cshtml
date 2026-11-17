@@ -1,0 +1,179 @@
+﻿@page
+@model Intermediario.Pages.Envio.IndexModel
+@{
+    ViewData["Title"] = "Envío y confirmación - DANIS";
+}
+
+<style>
+    .envio-page { min-height: 75vh; padding: 38px 18px 60px; background: #080b10; color: #f4f7fb; }
+    .envio-wrap { max-width: 1100px; margin: 0 auto; }
+    .envio-title { margin-bottom: 26px; }
+    .envio-title h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0 0 8px; }
+    .envio-title p { color: #aab4c2; margin: 0; }
+    .envio-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(290px, .7fr); gap: 22px; align-items: start; }
+    .envio-card { background: #111720; border: 1px solid #293342; border-radius: 18px; padding: 24px; }
+    .envio-card h2 { font-size: 1.2rem; margin: 0 0 18px; }
+    .envio-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .envio-field { display: flex; flex-direction: column; gap: 6px; }
+    .envio-field.full { grid-column: 1 / -1; }
+    .envio-field label { color: #cbd5e1; font-size: .9rem; }
+    .envio-field input, .envio-field textarea { width: 100%; color: #f8fafc; background: #090e15; border: 1px solid #354253; border-radius: 9px; padding: 11px 12px; }
+    .envio-field input:focus, .envio-field textarea:focus { outline: 2px solid #68cf85; border-color: #68cf85; }
+    .envio-products { display: grid; gap: 12px; }
+    .envio-product { display: flex; gap: 12px; align-items: center; padding-bottom: 12px; border-bottom: 1px solid #293342; }
+    .envio-product img { width: 64px; height: 64px; object-fit: cover; border-radius: 10px; background: #080b10; }
+    .envio-product-info { flex: 1; min-width: 0; }
+    .envio-product-info strong { display: block; }
+    .envio-product-info small { color: #aab4c2; }
+    .envio-price { white-space: nowrap; font-weight: 700; }
+    .envio-line { display: flex; justify-content: space-between; gap: 12px; margin: 12px 0; color: #cbd5e1; }
+    .envio-total { border-top: 1px solid #354253; padding-top: 16px; margin-top: 16px; font-size: 1.2rem; font-weight: 800; color: #fff; }
+    .envio-total strong { color: #76d68e; font-size: 1.45rem; }
+    .envio-note { color: #aab4c2; font-size: .83rem; line-height: 1.5; margin-top: 14px; }
+    .envio-button { display: inline-flex; justify-content: center; width: 100%; border: 0; border-radius: 10px; background: #72d58c; color: #07110a; font-weight: 800; padding: 13px 18px; text-decoration: none; cursor: pointer; margin-top: 18px; }
+    .envio-button:hover { background: #8be5a2; color: #07110a; }
+    .envio-back { color: #9de5ad; text-decoration: none; display: inline-block; margin-bottom: 18px; }
+    .envio-validation { color: #ff9b9b; font-size: .85rem; }
+    .envio-success { background: #102719; border: 1px solid #347b4b; border-radius: 14px; padding: 20px; margin-bottom: 22px; }
+    .envio-success h2 { color: #8be5a2; margin-top: 0; }
+    @@media (max-width: 760px) {
+        .envio-grid { grid-template-columns: 1fr; }
+        .envio-fields { grid-template-columns: 1fr; }
+        .envio-field.full { grid-column: auto; }
+        .envio-card { padding: 18px; }
+    }
+</style>
+
+<div class="envio-page">
+    <div class="envio-wrap">
+        <a asp-page="/Carrito/Index" class="envio-back">← Volver al carrito</a>
+
+        <div class="envio-title">
+            <h1>Envío y confirmación</h1>
+            <p>Revisa los costos, captura la dirección y confirma tu compra simulada.</p>
+        </div>
+
+        @if (Model.CompraConfirmada)
+        {
+            <section class="envio-success">
+                <h2>✓ Compra simulada confirmada</h2>
+                <p>Tu pedido de demostración quedó confirmado en esta sesión.</p>
+                <p><strong>Folio:</strong> @Model.FolioConfirmacion</p>
+                <p><strong>Total simulado:</strong> @Model.TotalConfirmado.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-MX"))</p>
+                <p class="envio-note">Esta confirmación es únicamente una simulación. No se realizó ningún cobro ni se creó una transacción real en MySQL.</p>
+                <a asp-page="/Index" class="envio-button">Volver al catálogo</a>
+            </section>
+        }
+        else if (!Model.Productos.Any())
+        {
+            <section class="envio-card">
+                <h2>Tu carrito está vacío</h2>
+                <p>No hay productos disponibles para simular el envío.</p>
+                <a asp-page="/Index" class="envio-button">Ir al catálogo</a>
+            </section>
+        }
+        else
+        {
+            <form method="post">
+                <div class="envio-grid">
+                    <section class="envio-card">
+                        <h2>Dirección de entrega</h2>
+                        <div asp-validation-summary="ModelOnly" class="envio-validation"></div>
+                        <div class="envio-fields">
+                            <div class="envio-field">
+                                <label asp-for="Direccion.Nombre">Nombre del destinatario</label>
+                                <input asp-for="Direccion.Nombre" autocomplete="name" />
+                                <span asp-validation-for="Direccion.Nombre" class="envio-validation"></span>
+                            </div>
+                            <div class="envio-field">
+                                <label asp-for="Direccion.Telefono">Teléfono</label>
+                                <input asp-for="Direccion.Telefono" autocomplete="tel" />
+                                <span asp-validation-for="Direccion.Telefono" class="envio-validation"></span>
+                            </div>
+                            <div class="envio-field full">
+                                <label asp-for="Direccion.Calle">Calle y número</label>
+                                <input asp-for="Direccion.Calle" autocomplete="street-address" />
+                                <span asp-validation-for="Direccion.Calle" class="envio-validation"></span>
+                            </div>
+                            <div class="envio-field">
+                                <label asp-for="Direccion.Colonia">Colonia</label>
+                                <input asp-for="Direccion.Colonia" />
+                                <span asp-validation-for="Direccion.Colonia" class="envio-validation"></span>
+                            </div>
+                            <div class="envio-field">
+                                <label asp-for="Direccion.CodigoPostal">Código postal</label>
+                                <input asp-for="Direccion.CodigoPostal" inputmode="numeric" autocomplete="postal-code" />
+                                <span asp-validation-for="Direccion.CodigoPostal" class="envio-validation"></span>
+                            </div>
+                            <div class="envio-field">
+                                <label asp-for="Direccion.Municipio">Municipio / ciudad</label>
+                                <input asp-for="Direccion.Municipio" autocomplete="address-level2" />
+                                <span asp-validation-for="Direccion.Municipio" class="envio-validation"></span>
+                            </div>
+                            <div class="envio-field">
+                                <label asp-for="Direccion.Estado">Estado</label>
+                                <input asp-for="Direccion.Estado" autocomplete="address-level1" />
+                                <span asp-validation-for="Direccion.Estado" class="envio-validation"></span>
+                            </div>
+                            <div class="envio-field full">
+                                <label asp-for="Direccion.Referencias">Referencias (opcional)</label>
+                                <textarea asp-for="Direccion.Referencias" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <aside class="envio-card">
+                        <h2>Resumen de compra</h2>
+                        <div class="envio-products">
+                            @foreach (var producto in Model.Productos)
+                            {
+                                var imagen = producto.Imagenes?.OrderByDescending(i => i.EsPrincipal).ThenBy(i => i.id).FirstOrDefault();
+                                <div class="envio-product">
+                                    @if (imagen != null && !string.IsNullOrWhiteSpace(imagen.ruta))
+                                    {
+                                        <img src="@imagen.ruta" alt="@producto.titulo" />
+                                    }
+                                    else
+                                    {
+                                        <img src="/images/producto-sin-imagen.png" alt="Producto sin imagen" />
+                                    }
+                                    <div class="envio-product-info">
+                                        <strong>@producto.titulo</strong>
+                                        <small>Comisión: @((producto.precio <= 10000m ? producto.precio * .10m : producto.precio * .05m).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-MX")))</small>
+                                    </div>
+                                    <span class="envio-price">@producto.precio.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-MX"))</span>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="envio-line">
+                            <span>Subtotal de productos</span>
+                            <strong>@Model.Subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-MX"))</strong>
+                        </div>
+                        <div class="envio-line">
+                            <span>Envío base (simulado)</span>
+                            <strong>@Model.CostoEnvio.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-MX"))</strong>
+                        </div>
+                        <div class="envio-line">
+                            <span>Comisión DANIS</span>
+                            <strong>@Model.Comision.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-MX"))</strong>
+                        </div>
+                        <div class="envio-line envio-total">
+                            <span>Total a pagar</span>
+                            <strong>@Model.Total.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-MX"))</strong>
+                        </div>
+
+                        <p class="envio-note">
+                            La comisión se calcula por producto: 10% para precios de hasta $10,000 MXN y 5% para precios superiores.
+                            El envío de $250 MXN es una tarifa fija de demostración por pedido.
+                        </p>
+                        <p class="envio-note">
+                            Esta página no procesa pagos ni genera guías reales de paquetería.
+                        </p>
+                        <button type="submit" asp-page-handler="Confirmar" class="envio-button">Confirmar compra simulada</button>
+                    </aside>
+                </div>
+            </form>
+        }
+    </div>
+</div>

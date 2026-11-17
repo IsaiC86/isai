@@ -1,0 +1,439 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\isaic\\source\\repos\\Intermediario\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\envio\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\envio\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\envio\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\envio\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\carrito\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\carrito\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\data\\marketplacecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:data\\marketplacecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\productos\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\productos\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\productos\\crear.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\productos\\crear.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\models\\productoimagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:models\\productoimagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\models\\disputa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:models\\disputa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\models\\transaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:models\\transaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\models\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:models\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\usuarios\\crear.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\usuarios\\crear.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\usuarios\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\usuarios\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\models\\vendedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:models\\vendedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\models\\comprador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:models\\comprador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|c:\\users\\isaic\\source\\repos\\intermediario\\intermediario.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{78A8F7C1-2A74-1469-87D6-65EACBFCEDE8}|Intermediario.csproj|solutionrelative:intermediario.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 480,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Crear.cshtml",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Productos\\Crear.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Productos\\Crear.cshtml",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Productos\\Crear.cshtml",
+              "RelativeToolTip": "Pages\\Productos\\Crear.cshtml",
+              "ViewState": "AgIAAHIBAAAAAAAAAAAowHQBAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-11T17:16:33.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MarketplaceContext.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Data\\MarketplaceContext.cs",
+              "RelativeDocumentMoniker": "Data\\MarketplaceContext.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Data\\MarketplaceContext.cs",
+              "RelativeToolTip": "Data\\MarketplaceContext.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAADwv0MAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:19:46.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAADwv10AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T17:14:22.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAkwKwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-11T17:13:27.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Carrito\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Carrito\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Carrito\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Carrito\\Index.cshtml.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAwwH0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T19:59:53.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Envio\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Envio\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Envio\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Envio\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T20:18:39.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:20:42.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Carrito\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Carrito\\Index.cshtml",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Carrito\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Carrito\\Index.cshtml",
+              "ViewState": "AgIAAH8BAAAAAAAAAAAkwKEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-11T19:59:38.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Index.cshtml",
+              "ViewState": "AgIAAEoFAAAAAAAAAAAkwGwFAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-11T17:12:24.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Envio\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Envio\\Index.cshtml",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Envio\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Envio\\Index.cshtml",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAAwLMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-11T20:18:20.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProductoImagen.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\ProductoImagen.cs",
+              "RelativeDocumentMoniker": "Models\\ProductoImagen.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\ProductoImagen.cs",
+              "RelativeToolTip": "Models\\ProductoImagen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T18:48:50.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Crear.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Productos\\Crear.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Productos\\Crear.cshtml.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Productos\\Crear.cshtml.cs",
+              "RelativeToolTip": "Pages\\Productos\\Crear.cshtml.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAAwN4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T17:16:43.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Crear.cshtml",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Usuarios\\Crear.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Usuarios\\Crear.cshtml",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Usuarios\\Crear.cshtml",
+              "RelativeToolTip": "Pages\\Usuarios\\Crear.cshtml",
+              "ViewState": "AgIAAJ0BAAAAAAAAAAAiwK4BAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-11T17:21:18.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Crear.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Usuarios\\Crear.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Usuarios\\Crear.cshtml.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Usuarios\\Crear.cshtml.cs",
+              "RelativeToolTip": "Pages\\Usuarios\\Crear.cshtml.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAUwEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T17:22:20.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-11T17:33:28.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Producto.cs",
+              "RelativeDocumentMoniker": "Models\\Producto.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Producto.cs",
+              "RelativeToolTip": "Models\\Producto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:32:10.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Administrador.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Administrador.cs",
+              "RelativeDocumentMoniker": "Models\\Administrador.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Administrador.cs",
+              "RelativeToolTip": "Models\\Administrador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:32:06.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Transaccion.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Transaccion.cs",
+              "RelativeDocumentMoniker": "Models\\Transaccion.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Transaccion.cs",
+              "RelativeToolTip": "Models\\Transaccion.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:32:16.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Disputa.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Disputa.cs",
+              "RelativeDocumentMoniker": "Models\\Disputa.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Disputa.cs",
+              "RelativeToolTip": "Models\\Disputa.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:32:20.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Pages\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Pages\\_ViewImports.cshtml",
+              "RelativeToolTip": "Pages\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-11T17:52:01.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Usuario.cs",
+              "RelativeToolTip": "Models\\Usuario.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAADwv3AAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:31:46.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Vendedor.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Vendedor.cs",
+              "RelativeDocumentMoniker": "Models\\Vendedor.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Vendedor.cs",
+              "RelativeToolTip": "Models\\Vendedor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:32:01.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Comprador.cs",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Comprador.cs",
+              "RelativeDocumentMoniker": "Models\\Comprador.cs",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Models\\Comprador.cs",
+              "RelativeToolTip": "Models\\Comprador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T16:31:51.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-11T16:24:11.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Intermediario.csproj",
+              "DocumentMoniker": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Intermediario.csproj",
+              "RelativeDocumentMoniker": "Intermediario.csproj",
+              "ToolTip": "C:\\Users\\isaic\\source\\repos\\Intermediario\\Intermediario.csproj",
+              "RelativeToolTip": "Intermediario.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-11T16:19:20.25Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 24,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

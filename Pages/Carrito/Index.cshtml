@@ -1,0 +1,417 @@
+﻿
+@page
+@model Intermediario.Pages.Carrito.IndexModel
+@using System.Globalization
+
+@{
+    ViewData["Title"] = "Mi carrito | DANIS Marketplace";
+    var mx = CultureInfo.GetCultureInfo("es-MX");
+}
+
+<style>
+    body {
+        background: #080b10 !important;
+        color: #eef2f7;
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .cart-page {
+        width: min(1100px, 92%);
+        margin: 35px auto;
+    }
+
+    .cart-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 25px;
+    }
+
+    .cart-head h1 {
+        margin: 0;
+        color: #fff;
+        font-size: 30px;
+    }
+
+    .cart-head p {
+        color: #9ba8ba;
+        margin: 7px 0 0;
+    }
+
+    .cart-link, .cart-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #354052;
+        border-radius: 10px;
+        padding: 11px 16px;
+        color: #eaf0fa;
+        background: #111824;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .cart-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 330px;
+        gap: 22px;
+        align-items: start;
+    }
+
+    .cart-items, .cart-summary {
+        background: #101722;
+        border: 1px solid #273244;
+        border-radius: 17px;
+        padding: 20px;
+    }
+
+    .cart-item {
+        display: grid;
+        grid-template-columns: 125px minmax(0, 1fr) auto;
+        gap: 17px;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #263143;
+    }
+
+    .cart-item:last-child {
+        border-bottom: 0;
+    }
+
+    .cart-image {
+        width: 125px;
+        height: 105px;
+        border-radius: 12px;
+        background: #080b10;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        color: #6c7b90;
+    }
+
+    .cart-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cart-item h3 {
+        color: #fff;
+        margin: 0 0 7px;
+        font-size: 18px;
+    }
+
+    .cart-item p {
+        color: #aab5c5;
+        margin: 4px 0;
+        font-size: 13px;
+    }
+
+    .cart-price {
+        color: #75d49a;
+        font-size: 19px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    .remove-form {
+        margin-top: 10px;
+    }
+
+    .remove-button {
+        border: 0;
+        background: transparent;
+        color: #f08b8b;
+        padding: 0;
+        cursor: pointer;
+        font-size: 12px;
+    }
+
+    .cart-summary h2 {
+        color: #fff;
+        margin: 0 0 18px;
+        font-size: 20px;
+    }
+
+    .summary-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 13px 0;
+        color: #aeb9c8;
+        font-size: 14px;
+    }
+
+    .summary-row strong {
+        color: #fff;
+    }
+
+    .summary-total {
+        border-top: 1px solid #344154;
+        margin-top: 17px;
+        padding-top: 17px;
+        font-size: 18px;
+    }
+
+    .summary-total strong {
+        color: #72d398;
+        font-size: 22px;
+    }
+
+    .cart-note {
+        margin: 16px 0;
+        padding: 12px;
+        border-radius: 10px;
+        background: #17251f;
+        color: #a9d9bd;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    /* BOTÓN CONTINUAR AL ENVÍO */
+    .checkout-button {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 10px;
+        background: #68c98f;
+        color: #06150c;
+        font-weight: 900;
+        padding: 14px;
+        cursor: pointer;
+        opacity: 1;
+        text-decoration: none;
+        text-align: center;
+        transition: .2s;
+    }
+
+    .checkout-button:hover {
+        background: #80dda3;
+        color: #06150c;
+        transform: translateY(-2px);
+    }
+
+    .checkout-button:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 3px;
+    }
+
+    .empty-cart {
+        text-align: center;
+        padding: 65px 20px;
+    }
+
+    .empty-cart .symbol {
+        font-size: 48px;
+        color: #67c98f;
+    }
+
+    .empty-cart h2 {
+        color: #fff;
+    }
+
+    .empty-cart p {
+        color: #aab5c5;
+    }
+
+    .cart-message {
+        color: #79d99e;
+        margin-bottom: 15px;
+    }
+
+    @@media(max-width:800px) {
+        .cart-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .cart-item {
+            grid-template-columns: 90px minmax(0, 1fr);
+        }
+
+        .cart-image {
+            width: 90px;
+            height: 90px;
+        }
+
+        .cart-price {
+            grid-column: 2;
+        }
+    }
+
+    @@media(max-width:520px) {
+        .cart-head {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .cart-head h1 {
+            font-size: 25px;
+        }
+
+        .cart-items, .cart-summary {
+            padding: 14px;
+        }
+    }
+</style>
+
+<main class="cart-page">
+
+    <div class="cart-head">
+        <div>
+            <h1>Tu carrito DANIS</h1>
+            <p>Revisa tus productos y el desglose antes de continuar.</p>
+        </div>
+
+        <a asp-page="/Index" class="cart-link">
+            ← Seguir comprando
+        </a>
+    </div>
+
+    @if (TempData["MensajeCarrito"] is string mensaje)
+    {
+        <div class="cart-message">@mensaje</div>
+    }
+
+    @if (Model.Productos.Count == 0)
+    {
+        <section class="cart-items empty-cart">
+            <div class="symbol">🛒</div>
+
+            <h2>Tu carrito está vacío</h2>
+
+            <p>
+                Explora el catálogo y agrega los productos que quieras comprar.
+            </p>
+
+            <a asp-page="/Index" class="cart-link">
+                Ir al catálogo
+            </a>
+        </section>
+    }
+    else
+    {
+        <div class="cart-layout">
+
+            <section class="cart-items">
+
+                @foreach (var producto in Model.Productos)
+                {
+                    var imagen = producto.Imagenes
+                        .OrderByDescending(i => i.EsPrincipal)
+                        .ThenBy(i => i.id)
+                        .FirstOrDefault();
+
+                    <article class="cart-item">
+
+                        <div class="cart-image">
+                            @if (imagen != null)
+                            {
+                                <img src="@imagen.ruta"
+                                     alt="@producto.titulo" />
+                            }
+                            else
+                            {
+                                <span>Sin foto</span>
+                            }
+                        </div>
+
+                        <div>
+                            <h3>@producto.titulo</h3>
+
+                            <p>
+                                Vendedor:
+                                @(producto.Vendedor?.NombreCompleto ?? "Vendedor DANIS")
+                            </p>
+
+                            <p>
+                                Estado: @producto.estado_producto
+                            </p>
+
+                            <form method="post"
+                                  asp-page-handler="Quitar"
+                                  class="remove-form">
+
+                                <input type="hidden"
+                                       name="productoId"
+                                       value="@producto.id" />
+
+                                <button type="submit"
+                                        class="remove-button">
+                                    Quitar del carrito
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="cart-price">
+                            @producto.precio.ToString("C2", mx)
+                        </div>
+
+                    </article>
+                }
+
+                <form method="post"
+                      asp-page-handler="Vaciar"
+                      style="margin-top:15px;">
+
+                    <button type="submit" class="cart-action">
+                        Vaciar carrito
+                    </button>
+                </form>
+
+            </section>
+
+            <aside class="cart-summary">
+
+                <h2>Resumen de compra</h2>
+
+                <div class="summary-row">
+                    <span>Productos (@Model.Productos.Count)</span>
+                    <strong>@Model.Subtotal.ToString("C2", mx)</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Comisión DANIS</span>
+                    <strong>@Model.Comision.ToString("C2", mx)</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Envío</span>
+                    <strong>$250.00</strong>
+                </div>
+
+                <div class="summary-row summary-total">
+                    <span>Total estimado</span>
+                    <strong>@((Model.Subtotal + Model.Comision + 250m).ToString("C2", mx))</strong>
+                </div>
+
+                <div class="cart-note">
+                    La comisión se calcula por producto:
+                    10% para precios de hasta $10,000 MXN y
+                    5% para precios superiores.
+
+                    El envío base es de $250 MXN por pedido.
+                </div>
+
+                <!-- CONEXIÓN CON LA PÁGINA DE ENVÍO -->
+                <a asp-page="/Envio/Index"
+                   class="checkout-button">
+                    Continuar al envío y pago →
+                </a>
+
+                <p style="color:#8998ad;font-size:11px;line-height:1.5;margin-bottom:0;">
+                    En el siguiente paso podrás capturar tu dirección,
+                    revisar las comisiones y confirmar la compra simulada.
+                    No se realizará ningún cobro real.
+                </p>
+
+            </aside>
+
+        </div>
+    }
+
+</main>

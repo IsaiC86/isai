@@ -1,0 +1,453 @@
+﻿@page
+@model Intermediario.Pages.Usuarios.CrearModel
+
+@{
+    ViewData["Title"] = "Crear cuenta";
+}
+
+<style>
+    body:has(.danis-register-page) {
+        margin: 0;
+        background: #0b0e15 !important;
+        color: #eaf0fa;
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body:has(.danis-register-page) main {
+        width: 100%;
+        max-width: none;
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+        background: transparent !important;
+    }
+
+    .danis-register-page {
+        min-height: 100vh;
+        background:
+            radial-gradient(ellipse at 50% 15%, #1b2b3d 0%, #0b0e15 65%);
+        color: #eaf0fa;
+    }
+
+    .register-header {
+        width: 100%;
+        min-height: 75px;
+        padding: 15px 6%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: #111722;
+        border-bottom: 1px solid #263247;
+    }
+
+    .register-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .register-brand-icon {
+        width: 43px;
+        height: 43px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: #5db58a;
+        color: #07140e;
+        font-size: 23px;
+        font-weight: 900;
+    }
+
+    .register-brand strong {
+        display: block;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .register-brand small {
+        display: block;
+        margin-top: 3px;
+        color: #8293aa;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .register-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 9px;
+    }
+
+    .register-navigation a {
+        padding: 9px 12px;
+        border-radius: 8px;
+        color: #aabbd1 !important;
+        font-size: 12px;
+        font-weight: 650;
+        text-decoration: none;
+        transition: .2s;
+    }
+
+    .register-navigation a:hover,
+    .register-navigation a.active {
+        background: #1d2a3b;
+        color: #65c596 !important;
+    }
+
+    .register-main {
+        width: 100%;
+        padding: 55px 18px 70px;
+        box-sizing: border-box;
+    }
+
+    .register-intro {
+        max-width: 650px;
+        margin: 0 auto 28px;
+        text-align: center;
+    }
+
+    .register-label {
+        display: inline-block;
+        margin-bottom: 13px;
+        padding: 7px 12px;
+        border: 1px solid #28513e;
+        border-radius: 30px;
+        background: #142b24;
+        color: #65c596;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    .register-intro h1 {
+        margin: 0;
+        color: #fff;
+        font-size: clamp(27px, 4vw, 36px);
+        font-weight: 850;
+    }
+
+    .register-intro p {
+        margin: 12px 0 0;
+        color: #9aabc2;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .register-card {
+        width: 100%;
+        max-width: 540px;
+        margin: 0 auto;
+        padding: 35px;
+        box-sizing: border-box;
+        background: linear-gradient(145deg, #192333, #131b29);
+        border: 1px solid #2b3a50;
+        border-radius: 19px;
+        box-shadow: 0 22px 60px #0006;
+    }
+
+    .register-card-heading {
+        margin-bottom: 27px;
+        text-align: center;
+    }
+
+    .register-card-icon {
+        width: 55px;
+        height: 55px;
+        margin: 0 auto 14px;
+        display: grid;
+        place-items: center;
+        border-radius: 15px;
+        background: #142b24;
+        border: 1px solid #28513e;
+        color: #65c596;
+        font-size: 25px;
+    }
+
+    .register-card-heading h2 {
+        margin: 0;
+        color: #fff;
+        font-size: 21px;
+        font-weight: 800;
+    }
+
+    .register-card-heading p {
+        margin: 8px 0 0;
+        color: #8fa2bd;
+        font-size: 12px;
+    }
+
+    .register-form .form-group {
+        margin-bottom: 19px;
+    }
+
+    .register-form label {
+        display: block;
+        margin-bottom: 8px;
+        color: #d9e4f2;
+        font-size: 12px;
+        font-weight: 750;
+    }
+
+    .register-form input {
+        display: block;
+        width: 100%;
+        min-height: 47px;
+        padding: 12px 14px;
+        box-sizing: border-box;
+        border: 1px solid #304057;
+        border-radius: 9px;
+        outline: none;
+        background: #0c1421;
+        color: #fff;
+        font-family: inherit;
+        font-size: 13px;
+        transition: .2s;
+    }
+
+    .register-form input::placeholder {
+        color: #71829c;
+    }
+
+    .register-form input:focus {
+        border-color: #5db58a;
+        box-shadow: 0 0 0 3px #5db58a20;
+    }
+
+    .register-form input:-webkit-autofill {
+        -webkit-text-fill-color: #fff !important;
+        box-shadow: 0 0 0 1000px #0c1421 inset !important;
+    }
+
+    .register-form .validation-message,
+    .register-form span.field-validation-error {
+        display: block;
+        margin-top: 6px;
+        color: #ff8295;
+        font-size: 11px;
+    }
+
+    .register-form .validation-message:empty {
+        display: none;
+    }
+
+    .register-actions {
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        margin-top: 28px;
+    }
+
+    .register-submit {
+        min-height: 46px;
+        padding: 12px 23px;
+        border: none;
+        border-radius: 9px;
+        background: #5db58a;
+        color: #07140e;
+        font-size: 13px;
+        font-weight: 850;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    .register-submit:hover {
+        background: #78cba0;
+        transform: translateY(-2px);
+    }
+
+    .register-cancel {
+        color: #9aafff !important;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    .register-cancel:hover {
+        color: #c2ceff !important;
+        text-decoration: underline;
+    }
+
+    .register-security {
+        margin-top: 24px;
+        padding-top: 17px;
+        border-top: 1px solid #29364a;
+        color: #8293aa;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    @@media (max-width: 750px) {
+        .register-header {
+            flex-direction: column;
+            padding: 17px;
+        }
+
+        .register-navigation {
+            width: 100%;
+        }
+
+        .register-main {
+            padding-top: 35px;
+        }
+    }
+
+    @@media (max-width: 500px) {
+        .register-navigation {
+            gap: 3px;
+        }
+
+        .register-navigation a {
+            padding: 8px;
+            font-size: 10px;
+        }
+
+        .register-card {
+            padding: 25px 19px;
+        }
+
+        .register-actions {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .register-submit {
+            width: 100%;
+        }
+
+        .register-cancel {
+            text-align: center;
+        }
+    }
+</style>
+
+<div class="danis-register-page">
+
+    <header class="register-header">
+
+        <div class="register-brand">
+            <span class="register-brand-icon">D</span>
+            <div>
+                <strong>DANIS Marketplace</strong>
+                <small>MARKETPLACE SEGURO</small>
+            </div>
+        </div>
+
+        <nav class="register-navigation">
+            <a asp-page="/Index">⌂ Inicio</a>
+            <a asp-page="/Productos/Crear">▦ Publicar producto</a>
+            <a href="#">⇄ Transacciones</a>
+            <a href="#">◈ Disputas</a>
+            <a asp-page="/Usuarios/Crear" class="active">♙ Registro</a>
+        </nav>
+
+    </header>
+
+    <main class="register-main">
+
+        <section class="register-intro">
+            <span class="register-label">CUENTA DANIS</span>
+
+            <h1>Únete a DANIS Marketplace</h1>
+
+            <p>
+                Crea tu cuenta para comenzar a comprar y vender
+                con mayor seguridad y confianza.
+            </p>
+        </section>
+
+        <section class="register-card">
+
+            <div class="register-card-heading">
+
+                <div class="register-card-icon">♙</div>
+
+                <h2>Crear cuenta</h2>
+
+                <p>
+                    Ingresa tus datos para crear tu cuenta.
+                </p>
+
+            </div>
+
+            <form method="post" class="register-form">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="validation-message"></div>
+
+                <div class="form-group">
+                    <label asp-for="Datos.Nombre">Nombre completo</label>
+
+                    <input asp-for="Datos.Nombre"
+                           placeholder="Ej. Juan Pérez"
+                           autocomplete="name"
+                           required />
+
+                    <span asp-validation-for="Datos.Nombre"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Datos.Correo">Correo electrónico</label>
+
+                    <input asp-for="Datos.Correo"
+                           type="email"
+                           placeholder="correo@ejemplo.com"
+                           autocomplete="email"
+                           required />
+
+                    <span asp-validation-for="Datos.Correo"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Datos.Password">Contraseña</label>
+
+                    <input asp-for="Datos.Password"
+                           type="password"
+                           minlength="8"
+                           placeholder="Mínimo 8 caracteres"
+                           autocomplete="new-password"
+                           required />
+
+                    <span asp-validation-for="Datos.Password"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Datos.Telefono">Teléfono</label>
+
+                    <input asp-for="Datos.Telefono"
+                           type="tel"
+                           placeholder="Teléfono opcional"
+                           autocomplete="tel" />
+
+                    <span asp-validation-for="Datos.Telefono"></span>
+                </div>
+
+                <div class="register-actions">
+
+                    <button type="submit" class="register-submit">
+                        Crear cuenta
+                    </button>
+
+                    <a asp-page="/Index" class="register-cancel">
+                        Cancelar
+                    </a>
+
+                </div>
+
+                <div class="register-security">
+                    🔒 Tus datos se utilizan para crear tu cuenta en DANIS Marketplace.
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

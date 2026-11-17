@@ -1,0 +1,172 @@
+
+/* ==========================================
+   DANIS MARKETPLACE - PUBLICAR PRODUCTO
+========================================== */
+
+/* FONDO */
+body:has(input[placeholder="Ej. Laptop Lenovo"]) {
+    margin: 0;
+    min-height: 100vh;
+    background: #0b0e15 !important;
+    color: #eaf0fa !important;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+    /* CONTENEDOR PRINCIPAL */
+    body:has(input[placeholder="Ej. Laptop Lenovo"]) main {
+        min-height: 100vh;
+        width: 100%;
+        padding: 55px 20px;
+        box-sizing: border-box;
+        background: #0b0e15 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* TÍTULO */
+    body:has(input[placeholder="Ej. Laptop Lenovo"]) h1 {
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto 10px;
+        color: #ffffff !important;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 850;
+    }
+
+    /* DESCRIPCIÓN */
+    body:has(input[placeholder="Ej. Laptop Lenovo"]) main > p {
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto 25px;
+        color: #91a2ba !important;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    /* FORMULARIO */
+    body:has(input[placeholder="Ej. Laptop Lenovo"]) form {
+        width: 100%;
+        max-width: 650px;
+        margin: 15px auto;
+        padding: 35px;
+        box-sizing: border-box;
+        background: #141b29 !important;
+        border: 1px solid #29374b;
+        border-radius: 17px;
+        box-shadow: 0 15px 40px #0005;
+    }
+
+        /* ETIQUETAS */
+        body:has(input[placeholder="Ej. Laptop Lenovo"]) form label {
+            display: block;
+            margin: 17px 0 8px;
+            color: #d5deec !important;
+            font-size: 13px;
+            font-weight: 750;
+        }
+
+        /* CAMPOS */
+        body:has(input[placeholder="Ej. Laptop Lenovo"]) form input,
+        body:has(input[placeholder="Ej. Laptop Lenovo"]) form textarea,
+        body:has(input[placeholder="Ej. Laptop Lenovo"]) form select {
+            display: block;
+            width: 100%;
+            min-height: 45px;
+            padding: 11px 13px;
+            box-sizing: border-box;
+            background: #0e1522 !important;
+            border: 1px solid #303e53 !important;
+            border-radius: 9px;
+            color: #ffffff !important;
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+            transition: .2s;
+        }
+
+        /* DESCRIPCIÓN DEL PRODUCTO */
+        body:has(input[placeholder="Ej. Laptop Lenovo"]) form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+            /* ENFOQUE */
+            body:has(input[placeholder="Ej. Laptop Lenovo"]) form input:focus,
+            body:has(input[placeholder="Ej. Laptop Lenovo"]) form textarea:focus,
+            body:has(input[placeholder="Ej. Laptop Lenovo"]) form select:focus {
+                border-color: #5db58a !important;
+                box-shadow: 0 0 0 3px #5db58a22;
+            }
+
+            /* PLACEHOLDERS */
+            body:has(input[placeholder="Ej. Laptop Lenovo"]) form input::placeholder,
+            body:has(input[placeholder="Ej. Laptop Lenovo"]) form textarea::placeholder {
+                color: #71829c !important;
+            }
+
+        /* OPCIONES DEL SELECTOR */
+        body:has(input[placeholder="Ej. Laptop Lenovo"]) form select option {
+            background: #141b29;
+            color: #ffffff;
+        }
+
+        /* BOTÓN PUBLICAR */
+        body:has(input[placeholder="Ej. Laptop Lenovo"]) form button,
+        body:has(input[placeholder="Ej. Laptop Lenovo"]) form input[type="submit"] {
+            min-height: 45px;
+            margin-top: 22px;
+            padding: 11px 22px;
+            border: none !important;
+            border-radius: 9px;
+            background: #5db58a !important;
+            color: #07140e !important;
+            font-size: 13px;
+            font-weight: 850;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+            body:has(input[placeholder="Ej. Laptop Lenovo"]) form button:hover,
+            body:has(input[placeholder="Ej. Laptop Lenovo"]) form input[type="submit"]:hover {
+                background: #78cba0 !important;
+                transform: translateY(-2px);
+            }
+
+        /* CANCELAR */
+        body:has(input[placeholder="Ej. Laptop Lenovo"]) form a {
+            display: inline-block;
+            margin-left: 12px;
+            color: #8da9ff !important;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+            body:has(input[placeholder="Ej. Laptop Lenovo"]) form a:hover {
+                color: #b5c5ff !important;
+                text-decoration: underline;
+            }
+
+    /* VALIDACIONES */
+    body:has(input[placeholder="Ej. Laptop Lenovo"]) .text-danger,
+    body:has(input[placeholder="Ej. Laptop Lenovo"]) .field-validation-error,
+    body:has(input[placeholder="Ej. Laptop Lenovo"]) .validation-summary-errors {
+        color: #ff8295 !important;
+        font-size: 12px;
+    }
+
+/* CELULARES */
+@media (max-width: 600px) {
+    body:has(input[placeholder="Ej. Laptop Lenovo"]) main {
+        padding: 30px 14px;
+    }
+
+    body:has(input[placeholder="Ej. Laptop Lenovo"]) form {
+        padding: 22px 18px;
+    }
+
+    body:has(input[placeholder="Ej. Laptop Lenovo"]) h1 {
+        font-size: 25px;
+    }
+}

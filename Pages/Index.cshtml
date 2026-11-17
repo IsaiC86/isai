@@ -1,0 +1,1388 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "DANIS Marketplace";
+}
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background: #0b0e15 !important;
+        color: #eaf0fa;
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body { background: #0b0e15 !important; }
+
+    .marketplace.danis-marketplace {
+        min-height: 100vh;
+        width: 100%;
+        background: #0b0e15 !important;
+        color: #eaf0fa;
+        padding-bottom: 40px;
+        box-sizing: border-box;
+    }
+
+    .danis-header {
+        min-height: 68px;
+        padding: 12px 4.5%;
+        background: #111722;
+        border-bottom: 1px solid #222d3e;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    .danis-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .danis-logo {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        background: #5db58a;
+        color: #07140e;
+        border-radius: 11px;
+        font-size: 24px;
+        font-weight: 900;
+    }
+
+    .danis-brand h1 {
+        color: #fff;
+        font-size: 17px;
+        margin: 0;
+        font-weight: 850;
+    }
+
+    .danis-brand span {
+        color: #8293aa;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .system-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #142b24;
+        border: 1px solid #244c3c;
+        color: #62c895;
+        border-radius: 20px;
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .status-dot {
+        width: 7px;
+        height: 7px;
+        background: #5db58a;
+        border-radius: 50%;
+    }
+
+    .danis-main {
+        width: min(1200px, 91%);
+        margin: 25px auto;
+    }
+
+    .danis-hero {
+        min-height: 130px;
+        padding: 25px;
+        background: #141b29;
+        border: 1px solid #252f41;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+    .danis-title-line {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .danis-title-line h2 {
+        color: #fff;
+        font-size: 29px;
+        font-weight: 900;
+        margin: 0;
+    }
+
+    .escrow-badge {
+        background: #5db58a;
+        color: #07140e;
+        font-size: 9px;
+        font-weight: 900;
+        padding: 5px 8px;
+        border-radius: 4px;
+    }
+
+    .danis-hero-content h3 {
+        color: #65c596;
+        font-size: 14px;
+        margin: 7px 0;
+    }
+
+    .danis-hero-content p {
+        color: #a2b2c9;
+        font-size: 12px;
+        margin: 0 0 7px;
+    }
+
+    .danis-hero-content small {
+        color: #8092ac;
+        font-size: 10px;
+    }
+
+    /* SELECTOR DE VISTA: EN LA PARTE SUPERIOR */
+    .danis-role-selector {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 8px;
+        width: fit-content;
+        margin: 12px 4.5% 0 auto;
+        padding: 5px;
+        background: #111827;
+        border: 1px solid #263247;
+        border-radius: 10px;
+        box-shadow: 0 8px 25px #0005;
+    }
+
+    .role-button {
+        min-width: 105px;
+        border: 0;
+        border-radius: 7px;
+        padding: 11px 9px;
+        background: transparent;
+        color: #a9b8ce;
+        font-size: 11px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background .2s, color .2s;
+    }
+
+    .role-button.active {
+        background: #5db58a;
+        color: #07140e;
+    }
+
+    .danis-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .danis-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+
+    .danis-tab {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 13px;
+        border: 1px solid #252f41;
+        border-radius: 10px;
+        background: #141b29;
+        color: #d5deec;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .danis-tab:hover,
+    .danis-tab.active {
+        border-color: #5db58a;
+        background: #5db58a;
+        color: #07140e;
+    }
+
+    .register-tab {
+        background: #4968e8;
+        border-color: #4968e8;
+        color: white;
+    }
+
+    .register-tab:hover {
+        background: #5b78f2;
+        border-color: #5b78f2;
+        color: white;
+    }
+
+    .publish-tab {
+        background: #142b24;
+        border-color: #244c3c;
+        color: #62c895;
+    }
+
+    .danis-search {
+        min-width: 245px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 0 12px;
+        border: 1px solid #252f41;
+        background: #141b29;
+        border-radius: 10px;
+        color: #8fa3c0;
+        box-sizing: border-box;
+    }
+
+    .danis-search input {
+        width: 100%;
+        background: transparent;
+        border: 0;
+        outline: none;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    .danis-search input::placeholder { color: #71829c; }
+
+    .danis-view { display: none; }
+    .danis-view.active { display: block; }
+
+    .danis-categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 22px 0 28px;
+    }
+
+    .category-chip {
+        padding: 8px 15px;
+        background: #141b29;
+        border: 1px solid #252f41;
+        color: #c5d1e2;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .category-chip:hover,
+    .category-chip.active {
+        background: #5db58a;
+        border-color: #5db58a;
+        color: #07140e;
+    }
+
+    .danis-section-title { margin: 0 0 17px; }
+
+    .danis-section-title h2 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0 0 5px;
+    }
+
+    .danis-section-title p {
+        color: #8fa2bd;
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .danis-product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .danis-product-card {
+        min-width: 0;
+        overflow: hidden;
+        padding: 14px;
+        background: #141b29;
+        border: 1px solid #222d3e;
+        border-radius: 15px;
+        transition: 0.2s;
+    }
+
+    .danis-product-card:hover {
+        border-color: #5db58a;
+        transform: translateY(-3px);
+    }
+
+    .product-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 11px;
+    }
+
+    .custody-label {
+        background: #142b24;
+        color: #62c895;
+        border: 1px solid #244c3c;
+        border-radius: 20px;
+        padding: 5px 9px;
+        font-size: 9px;
+        font-weight: 800;
+    }
+
+    .favorite-button {
+        border: 0;
+        background: transparent;
+        color: #aab8cc;
+        font-size: 23px;
+        cursor: pointer;
+    }
+
+    .favorite-button.is-favorite { color: #f06b83; }
+
+    .product-image {
+        height: 175px;
+        background: linear-gradient(135deg, #202d40, #111722);
+        border: 1px solid #29364a;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .product-image-icon { font-size: 55px; }
+
+    .product-image-caption {
+        color: #8193ac;
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .phone-art { background: linear-gradient(135deg, #e6edf4, #879eb6 45%, #344b67); }
+    .laptop-art { background: linear-gradient(135deg, #5126a0, #222e72 55%, #131b38); }
+    .component-art { background: linear-gradient(135deg, #101c32, #17436b 55%, #080f1e); }
+    .audio-art { background: linear-gradient(135deg, #26394b, #111b2a 60%, #080f19); }
+    .other-art { background: linear-gradient(135deg, #34445a, #172235); }
+
+    .product-information { padding-top: 15px; }
+
+    .product-category {
+        color: #62c895;
+        font-size: 9px;
+        font-weight: 800;
+    }
+
+    .product-information h3 {
+        color: #fff;
+        font-size: 16px;
+        margin: 7px 0;
+    }
+
+    .product-description {
+        color: #9aabc2;
+        font-size: 11px;
+        line-height: 1.6;
+        min-height: 35px;
+    }
+
+    .product-price-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px 0;
+        padding: 12px 0;
+        border-top: 1px solid #293449;
+        border-bottom: 1px solid #293449;
+    }
+
+    .product-price-area span {
+        color: #8293aa;
+        font-size: 10px;
+    }
+
+    .product-price-area strong {
+        color: #65c596;
+        font-size: 19px;
+    }
+
+    .product-status-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        color: #8fa2bd;
+        font-size: 10px;
+    }
+
+    .product-status { color: #62c895; }
+
+    .product-details {
+        margin: 13px 0;
+        color: #c5d1e2;
+        font-size: 11px;
+    }
+
+    .product-details summary { cursor: pointer; }
+
+    .product-details-content {
+        padding: 10px;
+        margin-top: 8px;
+        background: #101724;
+        border-radius: 8px;
+    }
+
+    .product-details-content p { color: #aab8cc; }
+
+    .buy-button {
+        width: 100%;
+        border: 0;
+        border-radius: 8px;
+        background: #5db58a;
+        color: #07140e;
+        padding: 11px;
+        font-size: 11px;
+        font-weight: 850;
+        cursor: pointer;
+    }
+
+    .buy-button:hover { background: #78cba0; }
+
+    .danis-modal-backdrop {
+        position: fixed; inset: 0; z-index: 2000; display: none;
+        align-items: center; justify-content: center; padding: 18px;
+        background: rgba(0, 0, 0, .78);
+    }
+    .danis-modal-backdrop.show { display: flex; }
+    .danis-product-modal {
+        width: min(760px, 100%); max-height: 90vh; overflow-y: auto;
+        background: #111722; border: 1px solid #34445c; border-radius: 16px;
+        box-shadow: 0 20px 70px #000a;
+    }
+    .danis-modal-header {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 17px 20px; border-bottom: 1px solid #293449;
+    }
+    .danis-modal-header h2 { margin: 0; color: #fff; font-size: 18px; }
+    .danis-modal-close {
+        border: 0; background: transparent; color: #d5deec;
+        font-size: 27px; cursor: pointer;
+    }
+    .danis-modal-body {
+        display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 22px; padding: 20px;
+    }
+    .danis-modal-image {
+        width: 100%; min-height: 250px; max-height: 340px;
+        object-fit: contain; background: #0b0e15;
+        border: 1px solid #293449; border-radius: 12px;
+    }
+    .danis-modal-placeholder {
+        min-height: 250px; display: grid; place-items: center;
+        background: #0b0e15; border-radius: 12px;
+        color: #62c895; font-size: 64px;
+    }
+    .danis-modal-info h3 { color: #fff; font-size: 22px; margin: 0 0 12px; }
+    .danis-modal-info p {
+        color: #aab8cc; font-size: 13px; line-height: 1.7; overflow-wrap: anywhere;
+    }
+    .danis-modal-price { display: block; color: #65c596; font-size: 25px; margin: 16px 0; }
+    .danis-modal-meta { color: #91a2ba; font-size: 12px; line-height: 1.8; }
+    .danis-modal-actions { display: flex; justify-content: flex-end; padding: 0 20px 20px; }
+    @@media (max-width: 600px) {
+        .danis-modal-body { grid-template-columns: 1fr; }
+        .danis-modal-image, .danis-modal-placeholder { min-height: 190px; }
+    }
+
+    .hidden-product { display: none !important; }
+
+    .danis-no-results {
+        display: none;
+        padding: 30px;
+        text-align: center;
+        color: #aab8cc;
+    }
+
+    .danis-empty {
+        text-align: center;
+        background: #141b29;
+        border: 1px solid #252f41;
+        border-radius: 15px;
+        padding: 45px 20px;
+        margin-top: 15px;
+    }
+
+    .empty-icon {
+        font-size: 40px;
+        color: #5db58a;
+        margin-bottom: 12px;
+    }
+
+    .danis-empty h3 {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .danis-empty p {
+        color: #91a2ba;
+        font-size: 12px;
+    }
+
+    .danis-primary-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 9px;
+        background: #5db58a;
+        color: #07140e;
+        padding: 11px 16px;
+        font-size: 12px;
+        font-weight: 800;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .danis-primary-button:hover {
+        background: #78cba0;
+        color: #07140e;
+    }
+
+    .danis-info-card {
+        max-width: 600px;
+        background: #141b29;
+        border: 1px solid #252f41;
+        border-radius: 15px;
+        padding: 30px;
+    }
+
+    .info-card-icon {
+        font-size: 35px;
+        color: #f0a44d;
+        margin-bottom: 12px;
+    }
+
+    .danis-info-card h3 {
+        color: #fff;
+        font-size: 17px;
+    }
+
+    .danis-info-card p {
+        color: #9aabc2;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .coming-soon {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 7px 10px;
+        border-radius: 20px;
+        background: #30291b;
+        color: #eab76c;
+        font-size: 10px;
+    }
+
+    .danis-toast {
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+        z-index: 1000;
+        max-width: 360px;
+        padding: 14px 18px;
+        border: 1px solid #34445c;
+        border-radius: 10px;
+        background: #192437;
+        color: #fff;
+        font-size: 12px;
+        box-shadow: 0 8px 30px #0007;
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: 0.2s;
+    }
+
+    .danis-toast.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @@media (max-width: 900px) {
+        .danis-product-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .danis-toolbar {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .danis-search { width: 100%; }
+    }
+
+    @@media (max-width: 600px) {
+        .danis-role-selector {
+            margin: 10px 12px 0 auto;
+            flex-direction: row;
+        }
+
+        .role-button {
+            width: auto;
+            min-width: 88px;
+        }
+
+        .danis-header { padding: 12px 16px; }
+
+        .danis-main {
+            width: calc(100% - 24px);
+            margin-top: 12px;
+        }
+
+        .danis-hero {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .danis-product-grid { grid-template-columns: 1fr; }
+
+        .danis-tabs {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .danis-tab {
+            font-size: 10px;
+            padding: 10px 6px;
+        }
+
+        .danis-system-info { display: none; }
+
+        .product-image { height: 190px; }
+    }
+</style>
+
+<div class="marketplace danis-marketplace">
+
+    <!-- ENCABEZADO -->
+    <header class="danis-header">
+        <div class="danis-brand">
+            <div class="danis-logo">D</div>
+            <div>
+                <h1>DANIS Marketplace</h1>
+                <span>MARKETPLACE SEGURO</span>
+            </div>
+        </div>
+
+        <div class="danis-system-info">
+            <a asp-page="/Carrito/Index" class="danis-tab" style="text-decoration:none;">🛒 Carrito</a>
+            <span class="system-badge">
+                <span class="status-dot"></span>
+                MySQL conectado
+            </span>
+        </div>
+    </header>
+
+    <!-- SELECTOR DE VISTA: COMPRADOR / VENDEDOR -->
+    <div class="danis-role-selector" aria-label="Seleccionar vista">
+        <button type="button"
+                class="role-button active"
+                id="buyerRole">
+            Comprador
+        </button>
+
+        <button type="button"
+                class="role-button"
+                id="sellerRole">
+            Vendedor
+        </button>
+    </div>
+
+    <main class="danis-main">
+
+        <!-- PRESENTACIÓN -->
+        <section class="danis-hero">
+            <div class="danis-hero-content">
+                <div class="danis-title-line">
+                    <h2>DANIS</h2>
+                    <span class="escrow-badge">ESCROW SECURE</span>
+                </div>
+
+                <h3>Marketplace Seguro con Intermediario</h3>
+
+                <p>
+                    Compra y vende productos con una experiencia
+                    de protección y seguimiento de transacciones.
+                </p>
+
+                <small>
+                    Tecnología C# · ASP.NET Core · MySQL · POO
+                </small>
+            </div>
+
+        </section>
+
+        <!-- NAVEGACIÓN -->
+        <section class="danis-toolbar">
+            <div class="danis-tabs">
+
+                <button type="button"
+                        class="danis-tab active"
+                        data-tab="catalog">
+                    ▦ Catálogo
+                </button>
+
+                <button type="button"
+                        class="danis-tab"
+                        data-tab="favorites">
+                    ♥ Lista de deseos
+                    (<span id="favoriteCount">0</span>)
+                </button>
+
+                <button type="button"
+                        class="danis-tab"
+                        data-tab="disputes">
+                    ♢ Disputas y Custodia
+                </button>
+
+                <a class="danis-tab register-tab"
+                   asp-page="/Usuarios/Crear">
+                    ♙ Registro
+                </a>
+
+                <a class="danis-tab publish-tab"
+                   id="publishProductButton"
+                   asp-page="/Productos/Crear"
+                   style="display:none;">
+                    ＋ Publicar producto
+                </a>
+            </div>
+
+            <div class="danis-search">
+                <span>⌕</span>
+                <input type="search"
+                       id="productSearch"
+                       placeholder="Buscar artículos..." />
+            </div>
+        </section>
+
+        <!-- CATÁLOGO -->
+        <section class="danis-view active" id="catalogView">
+
+            <div class="danis-categories">
+                <button type="button" class="category-chip active" data-category="todos">
+                    Todos
+                </button>
+
+                <button type="button" class="category-chip" data-category="telefonos">
+                    Teléfonos
+                </button>
+
+                <button type="button" class="category-chip" data-category="laptops">
+                    Laptops
+                </button>
+
+                <button type="button" class="category-chip" data-category="componentes">
+                    Componentes
+                </button>
+
+                <button type="button" class="category-chip" data-category="audio">
+                    Audio y Periféricos
+                </button>
+            </div>
+
+            <div class="danis-section-title">
+                <h2>Explora nuestros productos</h2>
+                <p>
+                    Selecciona un artículo para consultar sus detalles
+                    y opciones de compra.
+                </p>
+            </div>
+
+            @if (Model.Productos.Count == 0)
+            {
+                <div class="danis-empty">
+                    <div class="empty-icon">▦</div>
+                    <h3>Tu catálogo está esperando productos</h3>
+                    <p>
+                        Todavía no hay productos publicados en la base de datos.
+                    </p>
+                    <a asp-page="/Productos/Crear"
+                       class="danis-primary-button">
+                        + Publicar primer producto
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="danis-product-grid" id="productGrid">
+
+                    @foreach (var producto in Model.Productos)
+                    {
+                        <article class="danis-product-card"
+                                 data-product-id="@producto.id"
+                                 data-title="@producto.titulo"
+                                 data-description="@(producto.descripcion ?? "")"
+                                 data-price="@producto.precio.ToString(System.Globalization.CultureInfo.InvariantCulture)"
+                                 data-seller="@(producto.Vendedor?.NombreCompleto ?? "Vendedor DANIS")"
+                                 data-status="@(producto.estado_producto ?? "Disponible")">
+
+                            <div class="product-card-top">
+                                <span class="custody-label">
+                                    CUSTODIA DANIS
+                                </span>
+
+                                <button type="button"
+                                        class="favorite-button"
+                                        aria-label="Agregar a favoritos"
+                                        data-favorite="@producto.id">
+                                    ♡
+                                </button>
+                            </div>
+
+                            <div class="product-image" data-product-image>
+                                @if (producto.Imagenes != null && producto.Imagenes.Any())
+                                {
+                                    var imagenPrincipal = producto.Imagenes
+                                        .OrderByDescending(i => i.EsPrincipal)
+                                        .ThenBy(i => i.id)
+                                        .FirstOrDefault();
+
+                                    <img src="@imagenPrincipal?.ruta"
+                                         alt="@producto.titulo"
+                                         loading="lazy" />
+                                }
+                                else
+                                {
+                                    <span class="product-image-icon">▦</span>
+                                    <span class="product-image-caption">SIN FOTOGRAFÍA</span>
+                                }
+                            </div>
+
+                            <div class="product-information">
+                                <span class="product-category" data-product-category>
+                                    PRODUCTO
+                                </span>
+
+                                <h3>@producto.titulo</h3>
+
+                                <p class="product-description">
+                                    @(string.IsNullOrWhiteSpace(producto.descripcion)
+                                        ? "Consulta los detalles de este producto."
+                                        : producto.descripcion)
+                                </p>
+
+                                <div class="product-price-area">
+                                    <span>Precio publicado</span>
+                                    <strong>$@producto.precio.ToString("N2")</strong>
+                                </div>
+
+                                <div class="product-status-row">
+                                    <span class="product-status">
+                                        ● @producto.estado_producto
+                                    </span>
+
+                                    <span class="product-date">
+                                        @(producto.fecha_publicacion.HasValue
+                                            ? producto.fecha_publicacion.Value.ToString("dd/MM/yyyy")
+                                            : "Sin fecha")
+                                    </span>
+                                </div>
+
+                                <details class="product-details">
+                                    <summary>Detalles →</summary>
+
+                                    <div class="product-details-content">
+                                        <p>
+                                            <strong>Producto:</strong>
+                                            @producto.titulo
+                                        </p>
+
+                                        <p>
+                                            <strong>Descripción:</strong>
+                                            @(producto.descripcion ?? "Sin descripción")
+                                        </p>
+
+                                        <p>
+                                            <strong>Precio:</strong>
+                                            $@producto.precio.ToString("N2")
+                                        </p>
+
+                                        <p>
+                                            <strong>Estado:</strong>
+                                            @producto.estado_producto
+                                        </p>
+                                    </div>
+                                </details>
+
+                                <button type="button"
+                                        class="buy-button"
+                                        data-buy="@producto.id">
+                                    Ver detalles y comprar
+                                </button>
+                            </div>
+                        </article>
+                    }
+
+                </div>
+
+                <div class="danis-no-results" id="noResults">
+                    <h3>No se encontraron productos</h3>
+                    <p>Prueba con otra búsqueda o categoría.</p>
+                </div>
+            }
+        </section>
+
+        <!-- FAVORITOS -->
+        <section class="danis-view" id="favoritesView">
+            <div class="danis-section-title">
+                <h2>Mi lista de deseos</h2>
+                <p>Guarda los productos que te interesan.</p>
+            </div>
+
+            <div class="danis-product-grid" id="favoritesGrid"></div>
+
+            <div class="danis-empty" id="emptyFavorites">
+                <div class="empty-icon">♡</div>
+                <h3>Aún no tienes favoritos</h3>
+                <p>
+                    Agrega productos a tu lista usando el corazón de cada tarjeta.
+                </p>
+
+                <button class="danis-primary-button"
+                        type="button"
+                        id="returnCatalog">
+                    Explorar catálogo
+                </button>
+            </div>
+        </section>
+
+        <!-- DISPUTAS -->
+        <section class="danis-view" id="disputesView">
+            <div class="danis-section-title">
+                <h2>Disputas y custodia</h2>
+                <p>
+                    Área de seguimiento de incidencias de las transacciones.
+                </p>
+            </div>
+
+            <div class="danis-info-card">
+                <div class="info-card-icon">♢</div>
+                <h3>Centro de resolución</h3>
+                <p>
+                    Aquí podrás consultar y gestionar las disputas
+                    asociadas a las transacciones registradas.
+                </p>
+                <span class="coming-soon">
+                    Módulo pendiente de conexión
+                </span>
+            </div>
+        </section>
+
+        <div class="danis-modal-backdrop" id="productModal" aria-hidden="true">
+            <section class="danis-product-modal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+                <div class="danis-modal-header">
+                    <h2>Detalles del producto</h2>
+                    <button type="button" class="danis-modal-close" id="closeProductModal" aria-label="Cerrar">×</button>
+                </div>
+                <div class="danis-modal-body">
+                    <div id="modalProductImage"></div>
+                    <div class="danis-modal-info">
+                        <span class="product-category">PRODUCTO DANIS</span>
+                        <h3 id="modalProductTitle"></h3>
+                        <p id="modalProductDescription"></p>
+                        <strong class="danis-modal-price" id="modalProductPrice"></strong>
+                        <div class="danis-modal-meta">
+                            <div><strong>Vendedor:</strong> <span id="modalProductSeller"></span></div>
+                            <div><strong>Estado:</strong> <span id="modalProductStatus"></span></div>
+                            <div><strong>Protección:</strong> Compra con intermediario DANIS</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="danis-modal-actions">
+                    <form method="post" asp-page-handler="AgregarAlCarrito" id="addToCartForm">
+                        <input type="hidden" name="productoId" id="modalProductId" value="" />
+                        <button type="submit" class="danis-primary-button" id="modalContinueButton">
+                            Agregar al carrito
+                        </button>
+                    </form>
+                    <a asp-page="/Carrito/Index" class="danis-tab">Ver carrito</a>
+                </div>
+            </section>
+        </div>
+
+        <div class="danis-toast" id="danisToast"></div>
+
+    </main>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const tabs = document.querySelectorAll(".danis-tab[data-tab]");
+            const views = document.querySelectorAll(".danis-view");
+            const search = document.getElementById("productSearch");
+
+            const cards = Array.from(
+                document.querySelectorAll(".danis-product-card")
+            );
+
+            const categoryButtons = document.querySelectorAll(".category-chip");
+
+            const favoritesGrid = document.getElementById("favoritesGrid");
+            const favoriteCount = document.getElementById("favoriteCount");
+            const emptyFavorites = document.getElementById("emptyFavorites");
+            const noResults = document.getElementById("noResults");
+
+            const buyerRole = document.getElementById("buyerRole");
+            const sellerRole = document.getElementById("sellerRole");
+            const publishButton = document.getElementById("publishProductButton");
+            const productModal = document.getElementById("productModal");
+            const closeProductModal = document.getElementById("closeProductModal");
+            const modalContinueButton = document.getElementById("modalContinueButton");
+
+            let currentCategory = "todos";
+            let currentRole = "comprador";
+            let favorites = [];
+
+            // RECUPERAR FAVORITOS
+            try {
+                favorites = JSON.parse(
+                    localStorage.getItem("danisFavorites") || "[]"
+                );
+            } catch {
+                favorites = [];
+            }
+
+            function showToast(message) {
+                const toast = document.getElementById("danisToast");
+
+                toast.textContent = message;
+                toast.classList.add("show");
+
+                clearTimeout(window.danisToastTimer);
+
+                window.danisToastTimer = setTimeout(function () {
+                    toast.classList.remove("show");
+                }, 3000);
+            }
+
+            // CLASIFICACIÓN
+            function getCategory(card) {
+                const text = (
+                    card.dataset.title + " " +
+                    card.dataset.description
+                ).toLowerCase();
+
+                if (/teléfono|telefono|smartphone|iphone|celular/.test(text)) {
+                    return "telefonos";
+                }
+
+                if (/laptop|computadora|notebook/.test(text)) {
+                    return "laptops";
+                }
+
+                if (/tarjeta|gráfica|grafica|procesador|ram|componente/.test(text)) {
+                    return "componentes";
+                }
+
+                if (/audífono|audifono|headset|teclado|mouse|bocina|audio/.test(text)) {
+                    return "audio";
+                }
+
+                return "otros";
+            }
+
+            const labels = {
+                telefonos: "TELÉFONOS",
+                laptops: "LAPTOPS",
+                componentes: "COMPONENTES",
+                audio: "AUDIO Y PERIFÉRICOS",
+                otros: "OTROS PRODUCTOS"
+            };
+
+            const icons = {
+                telefonos: "📱",
+                laptops: "💻",
+                componentes: "🖥️",
+                audio: "🎧",
+                otros: "📦"
+            };
+
+            const styles = {
+                telefonos: "phone-art",
+                laptops: "laptop-art",
+                componentes: "component-art",
+                audio: "audio-art",
+                otros: "other-art"
+            };
+
+            cards.forEach(function (card) {
+                const category = getCategory(card);
+
+                card.dataset.category = category;
+
+                const label = card.querySelector("[data-product-category]");
+                const image = card.querySelector("[data-product-image]");
+
+                if (label) label.textContent = labels[category];
+
+                if (image) {
+                    image.classList.add(styles[category]);
+
+                    const icon = image.querySelector(".product-image-icon");
+
+                    if (icon) icon.textContent = icons[category];
+                }
+            });
+
+            // CAMBIAR PESTAÑAS
+            function openTab(name) {
+                tabs.forEach(function (tab) {
+                    tab.classList.toggle("active", tab.dataset.tab === name);
+                });
+
+                views.forEach(function (view) {
+                    view.classList.toggle("active", view.id === name + "View");
+                });
+
+                search.value = "";
+                filterProducts();
+            }
+
+            tabs.forEach(function (tab) {
+                tab.addEventListener("click", function () {
+                    openTab(tab.dataset.tab);
+                });
+            });
+
+            // BÚSQUEDA Y FILTROS
+            function filterProducts() {
+                const searchText = search.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                cards.forEach(function (card) {
+                    const title = (card.dataset.title || "").toLowerCase();
+                    const description = (card.dataset.description || "").toLowerCase();
+
+                    const matchesSearch =
+                        title.includes(searchText) ||
+                        description.includes(searchText);
+
+                    const matchesCategory =
+                        currentCategory === "todos" ||
+                        card.dataset.category === currentCategory;
+
+                    const visible = matchesSearch && matchesCategory;
+
+                    card.classList.toggle("hidden-product", !visible);
+
+                    if (visible) visibleCount++;
+                });
+
+                if (noResults) {
+                    noResults.style.display =
+                        visibleCount === 0 ? "block" : "none";
+                }
+            }
+
+            search.addEventListener("input", filterProducts);
+
+            // CATEGORÍAS
+            categoryButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    categoryButtons.forEach(function (item) {
+                        item.classList.remove("active");
+                    });
+
+                    button.classList.add("active");
+                    currentCategory = button.dataset.category;
+
+                    filterProducts();
+                });
+            });
+
+            // FAVORITOS
+            function saveFavorites() {
+                localStorage.setItem(
+                    "danisFavorites",
+                    JSON.stringify(favorites)
+                );
+            }
+
+            function updateFavorites() {
+                favoriteCount.textContent = favorites.length;
+
+                document.querySelectorAll("[data-favorite]").forEach(function (button) {
+                    const id = button.dataset.favorite;
+                    const selected = favorites.includes(id);
+
+                    button.classList.toggle("is-favorite", selected);
+                    button.textContent = selected ? "♥" : "♡";
+                });
+
+                favoritesGrid.innerHTML = "";
+
+                const favoriteCards = cards.filter(function (card) {
+                    return favorites.includes(card.dataset.productId);
+                });
+
+                favoriteCards.forEach(function (card) {
+                    const clone = card.cloneNode(true);
+                    clone.classList.remove("hidden-product");
+                    favoritesGrid.appendChild(clone);
+                });
+
+                emptyFavorites.style.display =
+                    favoriteCards.length === 0 ? "block" : "none";
+            }
+
+            // ACCIONES DE LOS PRODUCTOS
+            document.addEventListener("click", function (event) {
+
+                const favoriteButton = event.target.closest("[data-favorite]");
+
+                if (favoriteButton) {
+                    const id = favoriteButton.dataset.favorite;
+
+                    if (favorites.includes(id)) {
+                        favorites = favorites.filter(function (item) {
+                            return item !== id;
+                        });
+
+                        showToast("Producto eliminado de favoritos.");
+                    } else {
+                        favorites.push(id);
+                        showToast("Producto agregado a favoritos.");
+                    }
+
+                    saveFavorites();
+                    updateFavorites();
+                    return;
+                }
+
+                const buyButton = event.target.closest("[data-buy]");
+
+                if (buyButton) {
+                    if (currentRole !== "comprador") {
+                        showToast("Cambia a la vista de comprador para continuar.");
+                        return;
+                    }
+
+                    const id = buyButton.dataset.buy;
+                    document.getElementById("modalProductId").value = id;
+
+                    const product = cards.find(function (card) {
+                        return card.dataset.productId === id;
+                    });
+
+                    if (!product) {
+                        showToast("No se encontró el producto.");
+                        return;
+                    }
+
+                    const title = product.dataset.title || "Producto";
+                    const description = product.dataset.description || "Sin descripción.";
+                    const price = Number(product.dataset.price || 0);
+                    const seller = product.dataset.seller || "Vendedor DANIS";
+                    const status = product.dataset.status || "Disponible";
+                    const imageElement = product.querySelector("[data-product-image] img");
+                    const modalImage = document.getElementById("modalProductImage");
+
+                    document.getElementById("modalProductTitle").textContent = title;
+                    document.getElementById("modalProductDescription").textContent = description;
+                    document.getElementById("modalProductPrice").textContent =
+                        price.toLocaleString("es-MX", { style: "currency", currency: "MXN" });
+                    document.getElementById("modalProductSeller").textContent = seller;
+                    document.getElementById("modalProductStatus").textContent = status;
+
+                    modalImage.innerHTML = "";
+                    if (imageElement) {
+                        const modalImg = document.createElement("img");
+                        modalImg.src = imageElement.src;
+                        modalImg.alt = title;
+                        modalImg.className = "danis-modal-image";
+                        modalImage.appendChild(modalImg);
+                    } else {
+                        const placeholder = document.createElement("div");
+                        placeholder.className = "danis-modal-placeholder";
+                        placeholder.textContent = "▦";
+                        modalImage.appendChild(placeholder);
+                    }
+
+                    productModal.classList.add("show");
+                    productModal.setAttribute("aria-hidden", "false");
+                }
+            });
+
+            function closeModal() {
+                productModal.classList.remove("show");
+                productModal.setAttribute("aria-hidden", "true");
+            }
+
+            closeProductModal.addEventListener("click", closeModal);
+            productModal.addEventListener("click", function (event) {
+                if (event.target === productModal) closeModal();
+            });
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && productModal.classList.contains("show")) {
+                    closeModal();
+                }
+            });
+
+            // CAMBIO DE ROL
+            buyerRole.addEventListener("click", function () {
+                currentRole = "comprador";
+
+                buyerRole.classList.add("active");
+                sellerRole.classList.remove("active");
+
+                publishButton.style.display = "none";
+
+                showToast("Vista de comprador seleccionada.");
+            });
+
+            sellerRole.addEventListener("click", function () {
+                currentRole = "vendedor";
+
+                sellerRole.classList.add("active");
+                buyerRole.classList.remove("active");
+
+                publishButton.style.display = "inline-flex";
+
+                showToast("Vista de vendedor seleccionada.");
+            });
+
+            // REGRESAR AL CATÁLOGO
+            const returnCatalog = document.getElementById("returnCatalog");
+
+            if (returnCatalog) {
+                returnCatalog.addEventListener("click", function () {
+                    openTab("catalog");
+                });
+            }
+
+            // INICIALIZAR
+            updateFavorites();
+            filterProducts();
+
+        });
+    </script>
+}
